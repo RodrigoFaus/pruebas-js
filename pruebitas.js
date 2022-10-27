@@ -21,6 +21,7 @@ btnCreaSeccion.addEventListener("click", () => {
 	arraySecciones.push(inputSecciones)	
 	limpio()
 	creoSección()
+	asignoSecciones()
 })
 
 
@@ -45,6 +46,20 @@ arraySecciones.forEach(section => {
 	
 }
 
+
+function asignoSecciones() {
+    let select = document.getElementById("inputGroupSelect01")
+    let option = document.createElement("option")
+
+    arraySecciones.forEach(section => {
+        option.textContent = section
+        select.appendChild(option)
+
+
+    })
+
+}
+
 console.log(arraySecciones)
 
 function limpio() {document.getElementById("inputSecciones").value = ""}
@@ -62,7 +77,7 @@ function creoProducto() {
 
 	let inputNombre = document.getElementById("inputNombre").value
 	let inputDescripcion = document.getElementById("inputDescripcion").value
-	let inputCategoria = document.getElementById("inputCategoria").value
+	let inputCategoria = document.getElementById("inputGroupSelect01").value
 
 	let producto = new Menu(inputNombre,inputDescripcion,inputCategoria)
 
@@ -76,7 +91,7 @@ function creoProducto() {
 function limpioInputsProd () {
 	document.getElementById("inputNombre").value = ""
 	document.getElementById("inputDescripcion").value = ""
-	document.getElementById("inputCategoria").value = ""
+	document.getElementById("inputGroupSelect01").value = ""
 }
 
 console.log(arrayProductos)
