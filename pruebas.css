@@ -1,0 +1,8 @@
+.contenedor-prod {
+    display: none;
+}
+
+.active {
+    display: grid;
+
+}
